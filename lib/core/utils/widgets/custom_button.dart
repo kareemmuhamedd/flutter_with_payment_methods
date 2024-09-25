@@ -5,11 +5,13 @@ import '../../../../../core/utils/styles.dart';
 class CustomButton extends StatelessWidget {
   final VoidCallback onTap;
   final String text;
+  final bool isLoading;
 
   const CustomButton({
     super.key,
     required this.onTap,
     required this.text,
+    this.isLoading = false,
   });
 
   @override
@@ -26,11 +28,13 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text(
-            text,
-            textAlign: TextAlign.center,
-            style: Styles.style22,
-          ),
+          child: isLoading
+              ? const CircularProgressIndicator()
+              : Text(
+                  text,
+                  textAlign: TextAlign.center,
+                  style: Styles.style22,
+                ),
         ),
       ),
     );
