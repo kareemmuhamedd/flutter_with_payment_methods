@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
+
 class PaymentInfoItem extends StatelessWidget {
   final String title;
   final String value;

@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/utils/constants_pathes/icons_paths.dart';
 import '../../../../../core/utils/styles.dart';
+
 class CardInfoWidget extends StatelessWidget {
   const CardInfoWidget({
     super.key,

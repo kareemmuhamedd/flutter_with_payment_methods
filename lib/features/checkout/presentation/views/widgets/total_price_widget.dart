@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
 
-
 class TotalPrice extends StatelessWidget {
   final String title, value;
 
