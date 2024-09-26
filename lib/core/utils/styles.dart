@@ -39,7 +39,7 @@ abstract class Styles {
     fontWeight: FontWeight.w400,
     height: 0,
   );
-  static  TextStyle style16 = TextStyle(
+  static TextStyle style16 = TextStyle(
     color: Colors.black.withOpacity(0.699999988079071),
     fontSize: 16,
     fontFamily: 'Inter',

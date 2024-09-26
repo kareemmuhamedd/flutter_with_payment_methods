@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
+
 class OrderInfoItem extends StatelessWidget {
   final String title, value;
 

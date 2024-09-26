@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_paypal_stripe/core/utils/constants_pathes/image_paths.dart';
+import 'package:flutter_paypal_stripe/features/checkout/data/repos/checkout_repo_impl.dart';
 import 'package:flutter_paypal_stripe/features/checkout/presentation/views/payment_details_screen.dart';
 import 'package:flutter_paypal_stripe/features/checkout/presentation/views/widgets/payment_methodes_list_view.dart';
+import 'package:flutter_paypal_stripe/features/checkout/presentation/views/widgets/payment_methods_bottom_sheet.dart';
 import 'package:flutter_paypal_stripe/features/checkout/presentation/views/widgets/total_price_widget.dart';
 import '../../../../../core/utils/widgets/custom_button.dart';
+import '../../manager/payment_cubit.dart';
 import 'cart_info_item.dart';
 
 class MyCartScreenBody extends StatelessWidget {
@@ -51,7 +55,12 @@ class MyCartScreenBody extends StatelessWidget {
               // );
               showModalBottomSheet(
                 context: context,
-                builder: (context) => const PaymentMethodsBottomSheet(),
+                builder: (context) {
+                  return BlocProvider(
+                    create: (context) => PaymentCubit(CheckoutRepoImpl()),
+                    child: const PaymentMethodsBottomSheet(),
+                  );
+                },
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
@@ -63,33 +72,6 @@ class MyCartScreenBody extends StatelessWidget {
             text: 'Complete Payment',
           ),
           const SizedBox(height: 12),
-        ],
-      ),
-    );
-  }
-}
-
-class PaymentMethodsBottomSheet extends StatelessWidget {
-  const PaymentMethodsBottomSheet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const SizedBox(
-            height: 16,
-          ),
-          const PaymentMethodsListView(),
-          const SizedBox(
-            height: 32,
-          ),
-          CustomButton(
-            onTap: () {},
-            text: 'Continue',
-          ),
         ],
       ),
     );

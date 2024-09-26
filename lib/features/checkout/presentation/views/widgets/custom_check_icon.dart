@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 class CustomCheckIcon extends StatelessWidget {
   const CustomCheckIcon({
     super.key,
@@ -22,4 +23,3 @@ class CustomCheckIcon extends StatelessWidget {
     );
   }
 }
-
