@@ -3,6 +3,7 @@ import 'package:flutter_paypal_stripe/features/checkout/presentation/views/widge
 
 import '../../../../../core/utils/widgets/custom_button.dart';
 import 'custom_button_bloc_consumer.dart';
+
 class PaymentMethodsBottomSheet extends StatelessWidget {
   const PaymentMethodsBottomSheet({super.key});
 
@@ -26,4 +27,3 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
     );
   }
 }
-

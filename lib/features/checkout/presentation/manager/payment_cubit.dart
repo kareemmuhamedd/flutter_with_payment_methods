@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter_paypal_stripe/features/checkout/data/repos/checkout_repo.dart';
 import 'package:meta/meta.dart';
@@ -22,9 +21,11 @@ class PaymentCubit extends Cubit<PaymentState> {
       (l) => emit(PaymentFailure(l.errMessage)),
       (r) => emit(PaymentSuccess()),
     );
-    onChange(Change<PaymentState> change) {
-      log(change.toString());
-      super.onChange(change);
-    }
+  }
+
+  @override
+  onChange(Change<PaymentState> change) {
+    log(change.toString());
+    super.onChange(change);
   }
 }
